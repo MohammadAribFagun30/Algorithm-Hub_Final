@@ -2,26 +2,34 @@
 using namespace std;
 
 vector<int> adj[100];
+
 int visited[100];
 
-void dfs(int node) {
-    visited[node] = 1;
+void dfs(int node) { 
 
-    cout << node << " ";
+    visited[node] = 1; 
 
-    for(int x : adj[node]) {
+    cout << node << " ";  
+
+    for(int x : adj[node]) {  
+
         if(visited[x] == 0) {
+
             dfs(x);
         }
     }
 }
 
 int main() {
+
     int n, e;
+
     cin >> n >> e;
 
     for(int i = 0; i < e; i++) {
+
         int u, v;
+
         cin >> u >> v;
 
         adj[u].push_back(v);

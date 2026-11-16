@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Code is for " Undirected Graph "
+
 int main()
 {
     int n, e;
@@ -25,20 +27,22 @@ int main()
     cin >> start;
 
     q.push(start);
+
     visited[start] = 1;
 
     while (!q.empty())
     {
         int node = q.front();
-        q.pop();
 
-        cout << node << " ";
+        q.pop(); // empty  
 
-        for (int x : adj[node])
+        cout << node << " "; 
+
+        for (int x : adj[node]) 
         {
             if (visited[x] == 0)
             {
-                visited[x] = 1;
+                visited[x] = 1; 
                 q.push(x);
             }
         }
